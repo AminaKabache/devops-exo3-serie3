@@ -92,3 +92,17 @@ jobs:
       - name: Lancer les tests
         run: vendor/bin/phpunit tests
         working-directory: php-app
+
+
+  build:
+    runs-on: ubuntu-latest
+
+    needs:
+      - python
+      - node
+      - java
+      - php
+
+    steps:
+      - name: Build terminé
+        run: echo "Tous les tests sont réussis, le build peut commencer."     
